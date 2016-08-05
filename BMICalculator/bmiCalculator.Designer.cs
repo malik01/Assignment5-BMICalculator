@@ -38,8 +38,8 @@
             this.bmiresult = new System.Windows.Forms.TextBox();
             this.bmiscale = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.metricbutton = new System.Windows.Forms.RadioButton();
+            this.imperialbutton = new System.Windows.Forms.RadioButton();
             this.bmicalculatebutton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -128,6 +128,7 @@
             this.bmiresult.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bmiresult.Enabled = false;
             this.bmiresult.Location = new System.Drawing.Point(196, 180);
+            this.bmiresult.MaxLength = 3;
             this.bmiresult.Name = "bmiresult";
             this.bmiresult.ReadOnly = true;
             this.bmiresult.Size = new System.Drawing.Size(187, 42);
@@ -154,27 +155,27 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "System Of Measurement";
             // 
-            // radioButton1
+            // metricbutton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(12, 80);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(123, 52);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.Text = "metric";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.metricbutton.AutoSize = true;
+            this.metricbutton.Location = new System.Drawing.Point(12, 80);
+            this.metricbutton.Name = "metricbutton";
+            this.metricbutton.Size = new System.Drawing.Size(123, 52);
+            this.metricbutton.TabIndex = 2;
+            this.metricbutton.Text = "metric";
+            this.metricbutton.UseVisualStyleBackColor = true;
+            this.metricbutton.CheckedChanged += new System.EventHandler(this.metricbutton_CheckedChanged);
             // 
-            // radioButton2
+            // imperialbutton
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(141, 80);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(146, 52);
-            this.radioButton2.TabIndex = 3;
-            this.radioButton2.Text = "imperial";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.imperialbutton.AutoSize = true;
+            this.imperialbutton.Location = new System.Drawing.Point(141, 80);
+            this.imperialbutton.Name = "imperialbutton";
+            this.imperialbutton.Size = new System.Drawing.Size(146, 52);
+            this.imperialbutton.TabIndex = 3;
+            this.imperialbutton.Text = "imperial";
+            this.imperialbutton.UseVisualStyleBackColor = true;
+            this.imperialbutton.CheckedChanged += new System.EventHandler(this.imperialbutton_CheckedChanged);
             // 
             // bmicalculatebutton
             // 
@@ -223,8 +224,8 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.bmicalculatebutton);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.imperialbutton);
+            this.Controls.Add(this.metricbutton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Sitka Banner", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -251,8 +252,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox height;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton metricbutton;
+        private System.Windows.Forms.RadioButton imperialbutton;
         private System.Windows.Forms.Button bmicalculatebutton;
         private System.Windows.Forms.TextBox weight;
         private System.Windows.Forms.TextBox bmiresult;

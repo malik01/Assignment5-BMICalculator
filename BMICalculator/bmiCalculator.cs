@@ -16,10 +16,10 @@ namespace BMICalculator
         {
             InitializeComponent();
         }
-
+        ErrorProvider error = new ErrorProvider();
         private void bmicalculatebutton_Click(object sender, EventArgs e)
         {
-            if (radioButton1.Checked)
+            if (metricbutton.Checked)
             {
                 double result = Convert.ToDouble(weight.Text) / (Convert.ToDouble(height.Text) * Convert.ToDouble(height.Text));
                 bmiresult.Text = "" + result;
@@ -42,7 +42,7 @@ namespace BMICalculator
             }
 
 
-            if (radioButton2.Checked)
+            if (imperialbutton.Checked)
             {
                 double result = Convert.ToDouble(weight.Text)*703 / (Convert.ToDouble(height.Text) * Convert.ToDouble(height.Text));
                 bmiresult.Text = "" + result;
@@ -67,24 +67,29 @@ namespace BMICalculator
 
         private void bmiCalculator_Load(object sender, EventArgs e)
         {
-
+            
         }
+
 
         private void height_Leave(object sender, EventArgs e)
         {
-            if (height.Text == "" && weight.Text=="" || height.Text ==""|| weight.Text=="" )
+            if (height.Text == "" && weight.Text == "")
             {
-                label5.ForeColor = Color.Red;
-                label5.Text = "Please Enter Required Values";
+                
+                error.SetError(label7, "Please Enter value for height");
+                error.SetError(label8, "Please Enter value for weight");
             }
-            
+            if (Convert.ToInt32(weight.Text) == 0 || Convert.ToInt32(height.Text) == 0)
+            {
+                error.SetError(label7, "Please Enter value greater than zero for height");
+                error.SetError(label8, "Please Enter value greater than zero for weight");
+            }
             else
             {
-                label5.ForeColor = Color.Black;
-                label5.Text = "System Of Measurement";
+                
                 bmicalculatebutton.Enabled = true;
-            }
-            }
+            } 
+        }
         
          
         private void label6_Click(object sender, EventArgs e)
@@ -92,19 +97,23 @@ namespace BMICalculator
 
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        private void imperialbutton_CheckedChanged(object sender, EventArgs e)
         {
             weight.Clear();
             height.Clear();
+            bmiresult.Clear();
+            bmiscale.Clear();
             label7.Text = "Inches";
             label8.Text = "Pounds";
 
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void metricbutton_CheckedChanged(object sender, EventArgs e)
         {
             weight.Clear();
             height.Clear();
+            bmiresult.Clear();
+            bmiscale.Clear();
             label7.Text = "Meter";
             label8.Text = "KG";
         }
