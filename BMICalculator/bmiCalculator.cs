@@ -39,5 +39,18 @@ namespace BMICalculator
                 bmicalculatebutton.Enabled = true;
             }
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton2.Checked)
+            {
+                
+            }
+        }
     }
 }

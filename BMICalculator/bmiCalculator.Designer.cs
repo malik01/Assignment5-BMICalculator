@@ -39,8 +39,11 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.bmicalculatebutton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.bmiresult = new System.Windows.Forms.TextBox();
+            this.bmiscale = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,8 +58,8 @@
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.height, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.bmiresult, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.bmiscale, 1, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 138);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
@@ -64,14 +67,14 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.89265F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 82F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 79F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(329, 339);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(386, 339);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // weight
             // 
-            this.weight.Location = new System.Drawing.Point(167, 97);
+            this.weight.Location = new System.Drawing.Point(196, 97);
             this.weight.Name = "weight";
-            this.weight.Size = new System.Drawing.Size(159, 49);
+            this.weight.Size = new System.Drawing.Size(187, 49);
             this.weight.TabIndex = 4;
             this.weight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -107,15 +110,15 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(3, 259);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 48);
+            this.label4.Size = new System.Drawing.Size(145, 48);
             this.label4.TabIndex = 3;
-            this.label4.Text = "label4";
+            this.label4.Text = "BMI Scale";
             // 
             // height
             // 
-            this.height.Location = new System.Drawing.Point(167, 3);
+            this.height.Location = new System.Drawing.Point(196, 3);
             this.height.Name = "height";
-            this.height.Size = new System.Drawing.Size(159, 49);
+            this.height.Size = new System.Drawing.Size(187, 49);
             this.height.TabIndex = 1;
             this.height.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.height.Leave += new System.EventHandler(this.height_Leave);
@@ -132,6 +135,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(12, 80);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(123, 52);
@@ -147,9 +151,9 @@
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(146, 52);
             this.radioButton2.TabIndex = 3;
-            this.radioButton2.TabStop = true;
             this.radioButton2.Text = "imperial";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // bmicalculatebutton
             // 
@@ -162,31 +166,63 @@
             this.bmicalculatebutton.UseVisualStyleBackColor = true;
             this.bmicalculatebutton.Click += new System.EventHandler(this.bmicalculatebutton_Click);
             // 
-            // textBox1
+            // bmiresult
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(167, 180);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(159, 49);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.bmiresult.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bmiresult.Enabled = false;
+            this.bmiresult.Location = new System.Drawing.Point(196, 180);
+            this.bmiresult.Name = "bmiresult";
+            this.bmiresult.ReadOnly = true;
+            this.bmiresult.Size = new System.Drawing.Size(187, 42);
+            this.bmiresult.TabIndex = 5;
+            this.bmiresult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox2
+            // bmiscale
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(167, 262);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(159, 49);
-            this.textBox2.TabIndex = 6;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.bmiscale.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bmiscale.Enabled = false;
+            this.bmiscale.Location = new System.Drawing.Point(196, 262);
+            this.bmiscale.Name = "bmiscale";
+            this.bmiscale.ReadOnly = true;
+            this.bmiscale.Size = new System.Drawing.Size(187, 42);
+            this.bmiscale.TabIndex = 6;
+            this.bmiscale.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(401, 138);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(0, 48);
+            this.label6.TabIndex = 5;
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(401, 138);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 48);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Meters";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(401, 235);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(59, 48);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "KG";
             // 
             // bmiCalculator
             // 
             this.AcceptButton = this.bmicalculatebutton;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(569, 566);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.bmicalculatebutton);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
@@ -220,8 +256,11 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Button bmicalculatebutton;
         private System.Windows.Forms.TextBox weight;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox bmiresult;
+        private System.Windows.Forms.TextBox bmiscale;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }
 
