@@ -128,9 +128,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(4, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(316, 48);
+            this.label5.Size = new System.Drawing.Size(330, 48);
             this.label5.TabIndex = 1;
-            this.label5.Text = "System Of Mesurement";
+            this.label5.Text = "System Of Measurement";
             // 
             // radioButton1
             // 
@@ -143,6 +143,7 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "metric";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton2
             // 

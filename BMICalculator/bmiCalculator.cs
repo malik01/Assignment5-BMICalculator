@@ -29,17 +29,21 @@ namespace BMICalculator
 
         private void height_Leave(object sender, EventArgs e)
         {
-            if(height.Text==""||Convert.ToDouble(height.Text)< 1)
+            if (height.Text == "" && weight.Text=="" || height.Text ==""|| weight.Text=="" )
             {
-                height.ForeColor = Color.Red;
-                label5.Text = "Enter correct value for the fileds in red";
+                label5.ForeColor = Color.Red;
+                label5.Text = "Please Enter Required Values";
             }
+            
             else
             {
+                label5.ForeColor = Color.Black;
+                label5.Text = "System Of Measurement";
                 bmicalculatebutton.Enabled = true;
             }
-        }
-
+            }
+        
+         
         private void label6_Click(object sender, EventArgs e)
         {
 
@@ -47,10 +51,16 @@ namespace BMICalculator
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioButton2.Checked)
-            {
-                
-            }
+            label7.Text = "Centimeters";
+            label8.Text = "Pounds";
+            
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            label7.Text = "Meter";
+            label8.Text = "KG";
         }
     }
 }
