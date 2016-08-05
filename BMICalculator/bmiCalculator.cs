@@ -94,14 +94,17 @@ namespace BMICalculator
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
+            weight.Clear();
+            height.Clear();
             label7.Text = "Inches";
             label8.Text = "Pounds";
-            
 
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
+            weight.Clear();
+            height.Clear();
             label7.Text = "Meter";
             label8.Text = "KG";
         }
