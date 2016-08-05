@@ -19,7 +19,50 @@ namespace BMICalculator
 
         private void bmicalculatebutton_Click(object sender, EventArgs e)
         {
+            if (radioButton1.Checked)
+            {
+                double result = Convert.ToDouble(weight.Text) / (Convert.ToDouble(height.Text) * Convert.ToDouble(height.Text));
+                bmiresult.Text = "" + result;
+                if (result < 18.6)
+                {
+                    bmiscale.Text = "Underweight";
+                }
+                if (result > 18.6 && result<25)
+                {
+                    bmiscale.Text = "Normal";
+                }
+                if(result >=25 && result < 30)
+                {
+                    bmiscale.Text = "Overweight";
+                }
+                if (result >= 30)
+                {
+                    bmiscale.Text = "Obese";
+                }
+            }
 
+
+            if (radioButton2.Checked)
+            {
+                double result = Convert.ToDouble(weight.Text)*703 / (Convert.ToDouble(height.Text) * Convert.ToDouble(height.Text));
+                bmiresult.Text = "" + result;
+                if (result < 18.6)
+                {
+                    bmiscale.Text = "Underweight";
+                }
+                if (result > 18.6 && result < 25)
+                {
+                    bmiscale.Text = "Normal";
+                }
+                if (result >= 25 && result < 30)
+                {
+                    bmiscale.Text = "Overweight";
+                }
+                if (result >= 30)
+                {
+                    bmiscale.Text = "Obese";
+                }
+            }
         }
 
         private void bmiCalculator_Load(object sender, EventArgs e)
@@ -51,7 +94,7 @@ namespace BMICalculator
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            label7.Text = "Centimeters";
+            label7.Text = "Inches";
             label8.Text = "Pounds";
             
 

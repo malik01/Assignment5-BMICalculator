@@ -35,12 +35,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.height = new System.Windows.Forms.TextBox();
+            this.bmiresult = new System.Windows.Forms.TextBox();
+            this.bmiscale = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.bmicalculatebutton = new System.Windows.Forms.Button();
-            this.bmiresult = new System.Windows.Forms.TextBox();
-            this.bmiscale = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -123,6 +123,28 @@
             this.height.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.height.Leave += new System.EventHandler(this.height_Leave);
             // 
+            // bmiresult
+            // 
+            this.bmiresult.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bmiresult.Enabled = false;
+            this.bmiresult.Location = new System.Drawing.Point(196, 180);
+            this.bmiresult.Name = "bmiresult";
+            this.bmiresult.ReadOnly = true;
+            this.bmiresult.Size = new System.Drawing.Size(187, 42);
+            this.bmiresult.TabIndex = 5;
+            this.bmiresult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // bmiscale
+            // 
+            this.bmiscale.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bmiscale.Enabled = false;
+            this.bmiscale.Location = new System.Drawing.Point(196, 262);
+            this.bmiscale.Name = "bmiscale";
+            this.bmiscale.ReadOnly = true;
+            this.bmiscale.Size = new System.Drawing.Size(187, 42);
+            this.bmiscale.TabIndex = 6;
+            this.bmiscale.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -135,12 +157,10 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(12, 80);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(123, 52);
             this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
             this.radioButton1.Text = "metric";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
@@ -166,28 +186,6 @@
             this.bmicalculatebutton.Text = "Calculate BMI";
             this.bmicalculatebutton.UseVisualStyleBackColor = true;
             this.bmicalculatebutton.Click += new System.EventHandler(this.bmicalculatebutton_Click);
-            // 
-            // bmiresult
-            // 
-            this.bmiresult.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bmiresult.Enabled = false;
-            this.bmiresult.Location = new System.Drawing.Point(196, 180);
-            this.bmiresult.Name = "bmiresult";
-            this.bmiresult.ReadOnly = true;
-            this.bmiresult.Size = new System.Drawing.Size(187, 42);
-            this.bmiresult.TabIndex = 5;
-            this.bmiresult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // bmiscale
-            // 
-            this.bmiscale.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bmiscale.Enabled = false;
-            this.bmiscale.Location = new System.Drawing.Point(196, 262);
-            this.bmiscale.Name = "bmiscale";
-            this.bmiscale.ReadOnly = true;
-            this.bmiscale.Size = new System.Drawing.Size(187, 42);
-            this.bmiscale.TabIndex = 6;
-            this.bmiscale.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
