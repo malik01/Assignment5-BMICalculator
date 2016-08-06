@@ -30,13 +30,7 @@ namespace BMICalculator
             {
                 double result = Convert.ToDouble(weight.Text) / (Convert.ToDouble(height.Text) * Convert.ToDouble(height.Text));
                 bmiresult.Text = "" + result;
-                if (Convert.ToInt32(weight.Text) <= 0 || Convert.ToInt32(height.Text) <= 0)
-                {
-                    bmiresult.ForeColor = Color.Red;
-                    bmiresult.Text = "Values must be non-zero";
-                    bmiscale.ForeColor = Color.Red;
-                    bmiscale.Text = "NO SCALE DETERMINED";
-                }
+                
                 if (result < 18.6)
                 {
                     bmiscale.Text = "Underweight";
@@ -59,13 +53,7 @@ namespace BMICalculator
             {
                 double result = Convert.ToDouble(weight.Text) * 703 / (Convert.ToDouble(height.Text) * Convert.ToDouble(height.Text));
                 bmiresult.Text = "" + result;
-                if (Convert.ToInt32(weight.Text) <= 0 || Convert.ToInt32(height.Text) <= 0)
-                {
-                    bmiresult.ForeColor = Color.Red;
-                    bmiresult.Text = "Values must be non-zero";
-                    bmiscale.ForeColor = Color.Red;
-                    bmiscale.Text = "NO SCALE DETERMINED";
-                }
+                
                     if (result < 18.6)
                 {
                     bmiscale.Text = "Underweight";
