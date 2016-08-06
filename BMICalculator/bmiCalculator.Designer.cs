@@ -56,6 +56,7 @@
             this.bmiresult = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.ClearButton = new System.Windows.Forms.Button();
             this.TableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,12 +93,14 @@
             // 
             // bmicalculatebutton
             // 
+            this.bmicalculatebutton.BackColor = System.Drawing.Color.Maroon;
+            this.bmicalculatebutton.ForeColor = System.Drawing.Color.White;
             this.bmicalculatebutton.Location = new System.Drawing.Point(302, 656);
             this.bmicalculatebutton.Name = "bmicalculatebutton";
             this.bmicalculatebutton.Size = new System.Drawing.Size(216, 47);
             this.bmicalculatebutton.TabIndex = 4;
             this.bmicalculatebutton.Text = "Calculate BMI";
-            this.bmicalculatebutton.UseVisualStyleBackColor = true;
+            this.bmicalculatebutton.UseVisualStyleBackColor = false;
             this.bmicalculatebutton.Click += new System.EventHandler(this.bmicalculatebutton_Click);
             // 
             // label6
@@ -107,7 +110,6 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(0, 39);
             this.label6.TabIndex = 5;
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -146,6 +148,7 @@
             this.TableLayoutPanel.Controls.Add(this.EightButton, 1, 1);
             this.TableLayoutPanel.Controls.Add(this.SevenButton, 0, 1);
             this.TableLayoutPanel.Controls.Add(this.BackButton, 3, 0);
+            this.TableLayoutPanel.Controls.Add(this.ClearButton, 0, 0);
             this.TableLayoutPanel.Location = new System.Drawing.Point(124, 370);
             this.TableLayoutPanel.Name = "TableLayoutPanel";
             this.TableLayoutPanel.RowCount = 5;
@@ -270,7 +273,7 @@
             // 
             // BackButton
             // 
-            this.BackButton.BackColor = System.Drawing.Color.Blue;
+            this.BackButton.BackColor = System.Drawing.Color.CornflowerBlue;
             this.BackButton.ForeColor = System.Drawing.Color.White;
             this.BackButton.Location = new System.Drawing.Point(210, 3);
             this.BackButton.Name = "BackButton";
@@ -329,7 +332,7 @@
             this.bmiscale.Location = new System.Drawing.Point(178, 329);
             this.bmiscale.Name = "bmiscale";
             this.bmiscale.ReadOnly = true;
-            this.bmiscale.Size = new System.Drawing.Size(147, 38);
+            this.bmiscale.Size = new System.Drawing.Size(288, 38);
             this.bmiscale.TabIndex = 13;
             this.bmiscale.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -340,7 +343,7 @@
             this.bmiresult.Location = new System.Drawing.Point(178, 265);
             this.bmiresult.Name = "bmiresult";
             this.bmiresult.ReadOnly = true;
-            this.bmiresult.Size = new System.Drawing.Size(147, 38);
+            this.bmiresult.Size = new System.Drawing.Size(265, 38);
             this.bmiresult.TabIndex = 14;
             this.bmiresult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -361,6 +364,18 @@
             this.label4.Size = new System.Drawing.Size(152, 39);
             this.label4.TabIndex = 16;
             this.label4.Text = "BMI Scale";
+            // 
+            // ClearButton
+            // 
+            this.ClearButton.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.ClearButton.ForeColor = System.Drawing.Color.White;
+            this.ClearButton.Location = new System.Drawing.Point(3, 3);
+            this.ClearButton.Name = "ClearButton";
+            this.ClearButton.Size = new System.Drawing.Size(63, 41);
+            this.ClearButton.TabIndex = 19;
+            this.ClearButton.Text = "C";
+            this.ClearButton.UseVisualStyleBackColor = false;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // bmiCalculator
             // 
@@ -390,7 +405,6 @@
             this.Name = "bmiCalculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BMI Calculator";
-            this.Load += new System.EventHandler(this.bmiCalculator_Load);
             this.TableLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -426,6 +440,7 @@
         private System.Windows.Forms.TextBox bmiresult;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button ClearButton;
     }
 }
 

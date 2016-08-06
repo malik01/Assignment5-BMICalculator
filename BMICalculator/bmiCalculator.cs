@@ -7,7 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+/**
+ * author:Shahzaib Malik
+ * course:Comp 123 
+ * Semester: Summer 2016
+ */
 namespace BMICalculator
 {
 
@@ -17,6 +21,7 @@ namespace BMICalculator
         {
             InitializeComponent();
         }
+        // boolean value to check for form focus for rntering values through buttons on both of the textboxes
         public bool FormFocus { get; set; }
         private void bmicalculatebutton_Click(object sender, EventArgs e)
         {
@@ -25,6 +30,13 @@ namespace BMICalculator
             {
                 double result = Convert.ToDouble(weight.Text) / (Convert.ToDouble(height.Text) * Convert.ToDouble(height.Text));
                 bmiresult.Text = "" + result;
+                if (Convert.ToInt32(weight.Text) <= 0 || Convert.ToInt32(height.Text) <= 0)
+                {
+                    bmiresult.ForeColor = Color.Red;
+                    bmiresult.Text = "Values must be non-zero";
+                    bmiscale.ForeColor = Color.Red;
+                    bmiscale.Text = "NO SCALE DETERMINED";
+                }
                 if (result < 18.6)
                 {
                     bmiscale.Text = "Underweight";
@@ -42,11 +54,19 @@ namespace BMICalculator
                     bmiscale.Text = "Obese";
                 }
             }
+            // converts to imperial and does the calculations
             if (imperialbutton.Checked)
             {
                 double result = Convert.ToDouble(weight.Text) * 703 / (Convert.ToDouble(height.Text) * Convert.ToDouble(height.Text));
                 bmiresult.Text = "" + result;
-                if (result < 18.6)
+                if (Convert.ToInt32(weight.Text) <= 0 || Convert.ToInt32(height.Text) <= 0)
+                {
+                    bmiresult.ForeColor = Color.Red;
+                    bmiresult.Text = "Values must be non-zero";
+                    bmiscale.ForeColor = Color.Red;
+                    bmiscale.Text = "NO SCALE DETERMINED";
+                }
+                    if (result < 18.6)
                 {
                     bmiscale.Text = "Underweight";
                 }
@@ -65,7 +85,15 @@ namespace BMICalculator
             }
 
         }
-
+        //clear button removes all the entries from the form
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            height.Text = "";
+            weight.Text = "";
+            bmiresult.Text = "";
+            bmiscale.Text = "";
+            
+        }
         private void bmiCalculator_Load(object sender, EventArgs e)
         {
             
@@ -74,48 +102,27 @@ namespace BMICalculator
         private void bmiCalculatorButton_Click(object sender, EventArgs e)
         {
             Button clickedbutton = (Button)sender;
-            
+
             if (FormFocus == true)
             {
-               
-
-                // read the string in the TextBox
                 string heightbox = height.Text;
-
-                // add the text of the button clicked to the currentResult
                 heightbox += clickedbutton.Text;
-
-                // update the ResultTextBox
+                // adds to the weight textbox
                 height.Text = heightbox;
                 this.ActiveControl = height;
             }
             else if (FormFocus == false)
             {
-
-                // read the string in the TextBox
                 string weightbox = weight.Text;
-
-                // add the text of the button clicked to the currentResult
                 weightbox += clickedbutton.Text;
 
-                // update the ResultTextBox
+                // adds to the weight textbox
                 weight.Text = weightbox;
                 this.ActiveControl = weight;
             }
-            }
-        
-
-
-
-
-
-
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
         }
-
+        
+        //changes to imperial system
         private void imperialbutton_CheckedChanged(object sender, EventArgs e)
         {
             weight.Clear();
@@ -126,7 +133,7 @@ namespace BMICalculator
             label8.Text = "Pounds";
 
         }
-
+        //changes to metric sysytem
         private void metricbutton_CheckedChanged(object sender, EventArgs e)
         {
             weight.Clear();
